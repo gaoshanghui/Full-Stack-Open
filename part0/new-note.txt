@@ -1,0 +1,24 @@
+Title: New note
+----------------------------------------
+
+Browser->Server: HTTP POST /exampleapp/new_note
+
+Server: 
+The Script that deals with the location /exampleapp/new_note adds the new note into the notes array.
+
+Server-->Browser: Server Responses with HTTP status code 302(a URL redirect to /exampleapp/notes)
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+Server-->Browser: HTML-code
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: main.js
+
+Browser:
+starts to execute main.js that will send a GET request to /exampleapp/data.json
+
+Browser->Server: HTTP GET /exampleapp/data.json
+Server-->Browser: data.json
+
+Browser:
+The event handler defined in main.js starts to execute that renders notes to display through DOM-API.

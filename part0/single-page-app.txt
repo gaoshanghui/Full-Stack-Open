@@ -1,0 +1,18 @@
+Title: Single-page-app
+----------------------------------------
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser: HTML-code
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+Server-->Browser: main.js
+
+Browser:
+starts to execute main.js that will send a GET request to /exampleapp/data.json
+
+Browser->Server: HTTP GET /exampleapp/data.json
+Server-->Browser: data.json
+
+Browser:
+The event handler defined in main.js starts to execute that renders notes to display through DOM-API.

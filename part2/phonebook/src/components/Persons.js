@@ -6,7 +6,7 @@ const Persons = ({ persons, newFilter }) => {
       {persons.filter((person) => {
         const re = new RegExp(newFilter, 'gi');
         return re.test(person.name);
-      }).map((person) => <li key={person.name}>{person.name} {person.number}</li>)}
+      }).map((person) => <li key={person.id}>{person.name} {person.number}</li>)}
     </ul>
   )
 }

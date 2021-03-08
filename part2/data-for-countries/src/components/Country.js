@@ -4,8 +4,6 @@ import axios from 'axios'
 const Country = ({ matchedCountries }) => {
   const [weather, setWeather] = useState({})
 
-  
-
   useEffect(() => {
     const api_key = process.env.REACT_APP_API_KEY
     const country = matchedCountries()[0]
@@ -13,10 +11,9 @@ const Country = ({ matchedCountries }) => {
     axios
       .get(`http://api.weatherstack.com/current?access_key=${api_key}&query=${country.capital}`)
       .then((response) => {
-        console.log(response);
         setWeather(response.data.current)
       })
-  }, [])
+  }, [matchedCountries])
 
   return (
     <div>

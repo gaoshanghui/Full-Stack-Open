@@ -54,8 +54,8 @@ const App = () => {
             setNewName('');
             setNewNumber('');
           })
-          .catch(() => {
-            setErrorMessage(`Information of ${existPerson.name} has already been removed from server.`)
+          .catch((error) => {
+            setErrorMessage(error.response.data.message)
             setTimeout(() => {
               setErrorMessage(null)
             }, 2000)
@@ -71,6 +71,13 @@ const App = () => {
           setSuccessfulMessage(`Added ${response.name}`)
           setTimeout(() => {
             setSuccessfulMessage(null)  
+          }, 2000)
+        })
+        .catch(error => {
+          console.log(error.response)
+          setErrorMessage(error.response.data.message)
+          setTimeout(() => {
+            setErrorMessage(null)
           }, 2000)
         })
 

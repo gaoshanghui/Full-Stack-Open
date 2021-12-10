@@ -1,3 +1,6 @@
 # full-stack-open
-These are exercises of the Full Stack open 2021 course.\
-This repository contains from part 1 to part 3.
+
+This repository contains the exercises for the Full Stack open course.
+A folder corresponds to a part of the course.
+
+Course information: https://fullstackopen.com/en/

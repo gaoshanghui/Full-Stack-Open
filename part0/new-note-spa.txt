@@ -1,8 +1,0 @@
-Title: New note SPA
-----------------------------------------
-
-Broswer:
-The event handles defined in main.js executes to create a new note object and push to the notes array, then display new notes.
-
-Browser->Server: HTTP POST /exampleapp/new_note_spa (Contains new note data as JSON-data)
-Server-->Browser: Server Responses with HTTP status code 201

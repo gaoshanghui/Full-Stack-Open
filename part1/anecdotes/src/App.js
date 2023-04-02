@@ -31,8 +31,12 @@ const App = () => {
     setMostVoted(mostVotedItemIndex)
   }
 
-  const setSelectedIndex = () => {
-    const randomNumber = Math.floor(Math.random() * anecdotes.length)
+  const updateSelected = () => {
+    let randomNumber = Math.floor(Math.random() * anecdotes.length)
+    while (randomNumber === selected) {
+      randomNumber = Math.floor(Math.random() * anecdotes.length)
+    }
+
     setSelected(randomNumber)
   }
 
@@ -42,7 +46,7 @@ const App = () => {
       {anecdotes[selected]}
       <p>Has {points[selected]} votes</p>
       <div>
-        <Button handleClick={setSelectedIndex} label="Generate"/>
+        <Button handleClick={updateSelected} label="Generate"/>
         <Button handleClick={() => {updatePoints(selected)}} label="Vote" />
       </div>
       <h2>Anecdote with most votes</h2>
